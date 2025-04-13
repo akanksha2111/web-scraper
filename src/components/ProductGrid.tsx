@@ -20,7 +20,7 @@ export default function ProductGrid({ products }: ProductGridProps) {
       {products.map((product) => (
         <div key={product.id} className="bg-white rounded-lg shadow-md overflow-hidden">
           <img
-            src={product.imageUrl}
+            src={product.image_url}
             alt={product.title}
             className="w-full h-48 object-cover"
           />
@@ -31,7 +31,7 @@ export default function ProductGrid({ products }: ProductGridProps) {
               <span className="text-2xl font-bold text-gray-900">
                 ${product.price.toFixed(2)}
               </span>
-              {product.isPrime && (
+              {product.is_prime && (
                 <span className="flex items-center gap-1 text-blue-500">
                   <Package size={16} />
                   Prime
@@ -45,7 +45,7 @@ export default function ProductGrid({ products }: ProductGridProps) {
             </div>
 
             <a
-              href={product.productUrl}
+              href={product.url}
               target="_blank"
               rel="noopener noreferrer"
               className="block w-full text-center bg-gray-800 text-white py-2 rounded hover:bg-gray-900 transition-colors"
